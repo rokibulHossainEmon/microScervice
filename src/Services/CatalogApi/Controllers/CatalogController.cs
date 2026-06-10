@@ -101,6 +101,23 @@ namespace CatalogApi.Controllers
                 return CustomResult(ex.Message, HttpStatusCode.BadRequest);
             }
         }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
+        
+        public IActionResult GetById(string id)
+        {
+            try
+            {
+                var product = _productManager.GetById(id);
+                return CustomResult("data loded successflly ", product);//CustomResult By default 200
+                
+            }
+            catch (Exception ex)
+            {
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+            }
+        }
     }
 }
  

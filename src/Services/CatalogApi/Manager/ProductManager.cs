@@ -6,7 +6,7 @@ using MongoRepo.Repository;
 
 namespace CatalogApi.Manager
 {
-    public class ProductManager : CommonManager<Product>, IProductManager
+    public class ProductManager : CommonManager<Product>,IProductManager
     {
         public ProductManager() : base(new ProductRepository())
         {
